@@ -32,7 +32,7 @@ angular.module('myApp.SecondPage', ['ngRoute'])
                 count = count||250;
                 for (var j = 0; j < count; j++) {
                     stop++;
-                    yVal = $rootScope.dataNew[stop]-900;
+                    yVal = parseInt($rootScope.dataNew[stop]);
                     dps.push({
                         x: xVal,
                         y: yVal
