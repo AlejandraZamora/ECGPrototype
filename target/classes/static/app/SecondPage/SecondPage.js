@@ -24,12 +24,12 @@ angular.module('myApp.SecondPage', ['ngRoute'])
 
 		var yVal = 990;
 		var xVal=0;
-		var updateInterval = 500;
-		var dataLength = 250; // number of dataPoints visible at any point
+		var updateInterval = 0.25;
+		var dataLength = 500; // number of dataPoints visible at any point
         var stop=0;
 		var updateChart = function (count) {
             if(stop!=4000){
-                count = count||250;
+                count = count||1;
                 for (var j = 0; j < count; j++) {
                     stop++;
                     yVal = parseInt($rootScope.dataNew[stop]);
@@ -41,7 +41,7 @@ angular.module('myApp.SecondPage', ['ngRoute'])
                 };
                 if (dps.length > dataLength)
                 {
-                    for (var i=0;i<101;i++){dps.shift();}
+                    dps.shift();
                 }
                 chart.render();
 
